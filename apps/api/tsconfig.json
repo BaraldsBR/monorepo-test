@@ -1,8 +1,27 @@
 {
-  "extends": "@repo/typescript-config/base.json",
+  // "extends": "@repo/typescript-config/base.json",
+  // "compilerOptions": {
+  //   "lib": ["ES2015"],
+  //   "outDir": "./dist",
+  //   "baseUrl": "./src",
+  //   "paths": {
+  //     "@modules/*": [
+  //       "modules/*"
+  //     ],
+  //     "@config/*": [
+  //       "config/*"
+  //     ],
+  //     "@shared/*": [
+  //       "shared/*"
+  //     ]
+  //   }
+  // },
   "compilerOptions": {
-    "lib": ["ES2015"],
+    "module": "commonjs",
     "outDir": "./dist",
+    "rootDir": "./src",
+    "strict": true, 
+    "strictPropertyInitialization": false,
     "baseUrl": "./src",
     "paths": {
       "@modules/*": [
@@ -14,7 +33,12 @@
       "@shared/*": [
         "shared/*"
       ]
-    }
+    },
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
   },
   "exclude": ["node_modules"],
   "include": ["."]
